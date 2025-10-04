@@ -1,0 +1,41 @@
+{
+  "name": "B站表情包批量下载",
+  "description": "一键下载评论区 / 私信 / 收藏集表情包，打包成 ZIP",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "icons/16.png",
+    "24": "icons/24.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "64": "icons/64.png",
+    "128": "icons/128.png",
+    "256": "icons/256.png"
+  },
+  "permissions": [
+    "contextMenus",
+    "scripting",
+    "activeTab",
+    "downloads"
+  ],
+  "host_permissions": [
+    "*://*.bilibili.com/*"
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_title": "B站表情包下载",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["js/jszip.min.js"],
+      "matches": ["*://*.bilibili.com/*"]
+    }
+  ]
+}
